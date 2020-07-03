@@ -7,7 +7,6 @@
 <body>
 <input id="text" type="text" value="Enter a String or JSON" style="width:100%"/><br/>
 <div id="qrcode"></div>
-<!--<div id="jsondiv"><pre id="json" class="prettyprint lang-js linenums"></pre></div>-->
 <div id="jsondiv"><pre id="json" class="prettyprint lang-js"></pre></div>
 <script>
 
@@ -26,7 +25,6 @@
     let jsonData;
     try {
       jsonData = JSON.stringify(JSON.parse(elText.value), null, 4);
-      // jsonData = JSON.parse(elText.value);
     } catch (e) {
       jsonData = "Invalid JSON";
     }
@@ -34,7 +32,6 @@
     jsonDisplay.innerText = jsonData;
     jsonDisplay.classList.remove("prettyprinted");
     jsonDisplay.innerText = jsonData;
-    // jsonDisplay.innerText = PR.prettyPrintOne(jsonData);
     PR.prettyPrint();
     qrcode.makeCode(elText.value);
   }
